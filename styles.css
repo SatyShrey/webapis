@@ -1,0 +1,219 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color:skyblue;
+    padding-bottom: 10px;
+    border-bottom: 2px solid grey;
+    text-align: center;
+    position: relative;
+}
+.Alert2{
+    position: absolute;
+    bottom:-20px;
+    width: 100%;
+    div{
+        color: white;
+        padding: 4px;
+        width: fit-content;
+        margin: auto;
+        border-radius: 3px;
+    }
+    
+    .err{
+        background-color: red;
+    }
+    .ss{
+        background-color: green;
+    }
+}
+.loadContainer{
+    font-weight: bold;
+    color: skyblue;
+    margin: 10px;
+}
+.loader{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 20px solid grey;
+    border-top: 20px solid skyblue;
+    margin: auto;
+    animation: loadAnim 1s infinite;
+    color: red;
+}
+@keyframes loadAnim{
+    100%{
+        rotate: 360deg;
+    }
+}
+
+h1{
+    font-family: cursive;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    height: 87vh;
+    overflow-y: scroll;
+}
+
+.card{
+    background-color: skyblue;
+    width:300px;
+    margin: auto;
+    margin-top: 20px;
+    padding:4px;
+    border-radius: 4px;
+}
+
+.card textarea{
+    padding: 1%;
+    width: 98%;
+    height: 300px;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+.card h3{
+    text-align: center;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.btnAdd{
+    margin-top: 24px;
+    text-align: center;
+}
+.btnAdd .plus{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+    font-size: 70px;
+    border-radius: 7px;
+    background-color: skyblue;
+    font-weight: bold;
+}
+.btnAdd .error{
+    color: red;
+    text-align: center;
+    top: 100px;
+}
+.btnAdd span{
+    display: none;
+    margin-top: 20px;
+    font-size: medium;
+    font-style: italic;
+    font-weight: normal;
+}
+.btnAdd .plus:hover{
+    box-shadow: black 0px 0px 3px;
+    cursor: pointer;
+    color: orangered;
+    span{
+        display: block;
+    }
+}
+.btnAdd .plus:active{
+    box-shadow: 0px 0px 7px inset;
+    color: transparent;
+}
+.btnAdd textarea{
+    height: 230px;
+    width: 300px;
+    resize: none;
+    border: 1px solid skyblue;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+.btnAdd label{
+    font-weight: bold;
+}
+.btnAdd input{
+    font-weight: bold;
+    padding: 5px;
+    height: 30px;
+    margin-bottom: 5px;
+    width: 75%;
+    border: 1px solid skyblue;
+    outline: none;
+    border-radius: 4px;
+}
+.btnAdd input:hover,.btnAdd textarea:hover{
+    box-shadow: skyblue 0px 0px 5px;
+}
+.btnAdd button{
+    font-weight: bold;
+    color: white;
+    margin: 2px;
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+}
+.center{text-align: center;}
+#add{
+    background-color: orange;
+}
+#add:hover{
+    background-color: rgb(231, 151, 1);
+}
+#cancel{
+    background-color: grey;
+}
+#cancel:hover{
+    background-color: rgb(118, 117, 117);
+}
+button:hover{
+    cursor: pointer;
+}
+.btnAdd button:active{
+    box-shadow: black 0px 0px 7px inset;
+    color: transparent;
+}
+.delete,.yes,.no{
+    color:red;
+    border: 2px solid grey;
+    border-radius: 3px;
+    padding: 1px;
+}
+.yes,.no{
+    width: 30px;
+}
+.delete{
+    float:right;
+}
+.delete:hover,.no:hover,.yes:hover{
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+.delete:active{
+    color: black;
+}
+
+@media only screen and (max-width:1280px){
+    section{
+        grid-template-columns: 4fr 4fr 4fr;
+    }
+}
+
+@media only screen and (max-width:960px){
+    section{
+        grid-template-columns: 6fr 6fr;
+    }
+}
+
+@media only screen and (max-width:640px){
+    section{
+        grid-template-columns: 12fr;
+    }
+}
