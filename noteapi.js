@@ -8,6 +8,8 @@ app.use(express.json())
 const cors= require('cors');
 app.use(cors());
 
+  
+
 const mongoClient=require('mongodb').MongoClient;
 
 //initialize database............................
@@ -51,4 +53,4 @@ app.delete('/deletenote/:id',(request,response)=>{
 })
 
 //Listen///////////////////////////////////////////////
-app.listen(process.env.PORT,()=>console.log('server started.'))
+app.listen(process.env.PORT,()=>console.log('server started '+process.env.PORT))
