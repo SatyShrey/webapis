@@ -2,12 +2,21 @@
 require('dotenv').config()
 
 var cors= require('cors');
-app.use(cors());
-const express=require('express')
 const app=express()
 const mongoose=require('mongoose')
 const mongoClient=require('mongodb').MongoClient;
 app.use(express.json())
+app.use(cors());
+const express=require('express')
+
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://webapis-j8hu.onrender.com');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
+  
 
 //initialize database............................
 let database='Database'
