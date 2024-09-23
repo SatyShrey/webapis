@@ -1,6 +1,8 @@
 
 require('dotenv').config()
 
+var cors= require('cors');
+app.use(cors());
 const express=require('express')
 const app=express()
 const mongoose=require('mongoose')
@@ -15,7 +17,7 @@ mongoClient.connect(process.env.mongoUrl).then(clientObject=>{
 
 //default response.................................
 app.get('/',(req,res)=>{
-    res.send('Welcome to NETFLIX API.')
+    res.send('Welcome to Note API.')
 })
 
 
@@ -25,6 +27,26 @@ app.get('/notes',(request,response)=>{
         response.send(documents);
         response.end();
     })
+})
+
+//add notes.....................................
+
+app.post('/addnote',(request,response)=>{
+    var newNote={
+        Title:request.body.Title,
+        Descriptions:request.body.Descriptions,
+        uid:Date.now().toString()
+    }
+    database.collection('notes').insertOne(newNote);
+    response.end();
+})
+
+
+//delete notes.............................................
+app.delete('/deletenote/:id',(request,response)=>{
+    var id=request.params.id;
+    database.collection('notes').deleteOne({uid:id});
+        response.end();
 })
 
 //Listen///////////////////////////////////////////////
