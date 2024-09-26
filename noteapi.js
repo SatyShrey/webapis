@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors({origin:"https://satyaatweb3-notesapp.netlify.app"}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
